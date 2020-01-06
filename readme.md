@@ -95,4 +95,4 @@ class Car {
 
 ## Limitations:
 1. While it can handle null values for (de)serialization, you are not allowed to omit properties during deserialization that have been typed-hinted, as those must always be initialized before they can be accessed
-2. There has been a long-standing with the parent library regarding coercing values instead of type-checking them (https://github.com/schmittjoh/serializer/issues/561). This library has no influence on this behaviour
+2. There has been a long-standing issue with the parent library regarding coercing values instead of type-checking them (https://github.com/schmittjoh/serializer/issues/561). This library has no influence on this behaviour
