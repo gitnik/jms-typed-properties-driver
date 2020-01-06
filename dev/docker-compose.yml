@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  php:
+    container_name: php
+    build:
+      context: "../"
+      dockerfile: dev/Dockerfile
+    volumes:
+      - ../:/app
+    environment:
+      - PHP_IDE_CONFIG=serverName=docker

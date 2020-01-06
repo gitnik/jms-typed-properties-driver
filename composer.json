@@ -1,0 +1,27 @@
+{
+    "name": "gitnik/jms-typed-properties-driver",
+    "type": "library",
+    "description": "Allows you to use typed properties for JMS serialization",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nik Karbaum",
+            "email": "nik.karbaum@gmail.com",
+            "homepage": "http://gitnik.io"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Gitnik\\JmsTypedPropertiesDriver\\": "src",
+            "Gitnik\\JmsTypedPropertiesDriver\\Tests\\": "tests"
+        }
+    },
+    "require": {
+        "php": ">=7.4",
+        "ext-json": "*",
+        "jms/serializer": "^3.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.4"
+    }
+}
