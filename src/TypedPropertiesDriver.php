@@ -33,6 +33,10 @@ class TypedPropertiesDriver implements DriverInterface
                 continue;
             }
 
+            if (!array_key_exists($property->getName(), $classMetadata->propertyMetadata)) {
+                continue;
+            }
+
             /**
              * @var PropertyMetadata $propertyMetadata
              */
