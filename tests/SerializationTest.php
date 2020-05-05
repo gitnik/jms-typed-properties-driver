@@ -2,6 +2,7 @@
 
 namespace Gitnik\JmsTypedPropertiesDriver\Tests;
 
+use DateTime;
 use Doctrine\Common\Annotations\AnnotationRegistry;
 use Gitnik\JmsTypedPropertiesDriver\Tests\Stubs\Car;
 use Gitnik\JmsTypedPropertiesDriver\Tests\Stubs\Make;
@@ -40,6 +41,7 @@ class SerializationTest extends TestCase
         $car->horsePower = 200;
         $car->make = $make;
         $car->color = 'blue';
+        $car->releaseDate = new DateTime('2011-02-03');
 
         $json = $this->serializer->serialize(
             $car,
@@ -52,7 +54,8 @@ class SerializationTest extends TestCase
                 'name' => 'BMW',
                 'yearFounded' => 1916
             ],
-            'color' => 'blue'
+            'color' => 'blue',
+            'releaseDate' => '2011-02-03',
         ];
 
         self::assertJsonStringEqualsJsonString(
@@ -71,6 +74,7 @@ class SerializationTest extends TestCase
         $car->horsePower = 200;
         $car->make = $make;
         $car->color = 'blue';
+        $car->releaseDate = new DateTime('2011-02-03');
 
         $json = $this->serializer->serialize(
             $car,
@@ -82,7 +86,8 @@ class SerializationTest extends TestCase
             'make' => [
                 'name' => 'BMW'
             ],
-            'color' => 'blue'
+            'color' => 'blue',
+            'releaseDate' => '2011-02-03',
         ];
 
         self::assertJsonStringEqualsJsonString(
