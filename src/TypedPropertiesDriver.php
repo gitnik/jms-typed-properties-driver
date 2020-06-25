@@ -42,6 +42,10 @@ class TypedPropertiesDriver implements DriverInterface
              */
             $propertyMetadata = $classMetadata->propertyMetadata[$property->getName()];
 
+            if ($propertyMetadata->type !== null) {
+                continue;
+            }
+
             $propertyMetadata->setType(
                 $this->typeParser->parse(
                     $property->getType()->getName()
